@@ -1,0 +1,203 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>@ViewBag.title</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/css/custom.css">
+
+    <link rel="stylesheet" href="~/Dashboard_Files/assets/vendor/fonts/boxicons.css" />
+
+    <!--[if lt IE 9]>
+      <script src="~/Content/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="~/Content/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="text-align:center">
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> Customizable Dashboard
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Diverse Payment Methods
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Seamless Integration
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Real Time Insights
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="~/Home/Home"><img src="~/Content/images/KlickitLogo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="~/Home/Home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home/About">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home/Contact">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home/Shop">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home/Orders">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Home/Logout">Logout</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    @RenderBody()
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Business Time</h3>
+                            <ul class="list-time">
+                                <li>Sunday - Thursday: 10.00 am to 07.00 pm</li>
+                                <li>Fridy - Saturday: <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Social Media</h3>
+                            <p>Opinion Matter</p>
+                            <ul>
+                                <li><a href="~/Content/#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="~/Content/#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="~/Content/#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="~/Content/#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="contact">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About Klickit</h4>
+                            <p>Klickit is a fintech company operating in the education industry. We offer a secure fees management system for educational institutions and a hassle-free payment experience for parents.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="~/Home/About">About Us</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Our Sitemap</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Office 221, Centro Egypt Mall, 5th Settlement, New Cairo 11835,<br> Egypt.</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone : +20-01141325682</p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: gomaam671@yahoo.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer  -->
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">
+            All Rights Reserved. &copy; @DateTime.Now.Year - Made with ❤️ by : Muhammad Gomaa
+        </p>
+    </div>
+    <!-- End copyright  -->
+
+    <a href="~/Content/#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="~/Content/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/Content/js/jquery.superslides.min.js"></script>
+    <script src="~/Content/js/bootstrap-select.js"></script>
+    <script src="~/Content/js/inewsticker.js"></script>
+    <script src="~/Content/js/bootsnav.js."></script>
+    <script src="~/Content/js/images-loded.min.js"></script>
+    <script src="~/Content/js/isotope.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/baguetteBox.min.js"></script>
+    <script src="~/Content/js/form-validator.min.js"></script>
+    <script src="~/Content/js/contact-form-script.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+
+</html>

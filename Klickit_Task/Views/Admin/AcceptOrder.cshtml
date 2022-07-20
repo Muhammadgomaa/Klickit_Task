@@ -1,0 +1,42 @@
+﻿@model Klickit_Task.Models.Order
+
+@{
+    ViewBag.Title = "Accept Order";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Basic Layout & Basic with Icons -->
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> Order /</span> Accept Order</h4>
+
+        <div class="row">
+            <!-- Basic with Icons -->
+            <div class="col-xxl">
+                <div class="card mb-4">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="mb-0">Accept Order</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="~/Admin/AcceptOrder" id="form1" enctype="multipart/form-data">
+                            @Html.HiddenFor(n => n.Prod_ID )
+                            @Html.HiddenFor(n => n.User_ID)
+                            @Html.HiddenFor(n => n.Order_ID)
+                            @Html.HiddenFor(n => n.Status, new { Value = "Accept" })
+                            @Html.HiddenFor(n => n.Date)
+                            @Html.HiddenFor(n => n.Time)
+                            <div class="row justify-content-end">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Update Order</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / Content -->

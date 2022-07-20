@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Pending Orders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    List<Klickit_Task.Models.Order> orders = ViewBag.Order;
+}
+
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> Orders /</span>All Orders Pending Details</h4>
+        <!-- Basic Bootstrap Table -->
+        <div class="card">
+            <h5 class="card-header">Orders Details Table</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>User Email</th>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        @for (int i = 0; i < orders.Count; i++)
+                        {
+                        <tr>
+                            <td>@orders[i].Order_ID</td>
+                            <td><strong>@orders[i].User.User_Email</strong></td>
+                            <td><strong>@orders[i].Product.Prod_Name</strong></td>
+                            <td>@orders[i].Product.Prod_Price "L.E"</td>
+                            <td>@orders[i].Date</td>
+                            <td>@orders[i].Time</td>
+                            <td><span class="badge bg-label-warning me-1">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="@Url.Action("AcceptOrder",new { id=orders[i].Order_ID})"><i class="bx bx-edit-alt me-1"></i> Accept</a>
+                                        <a class="dropdown-item" href="@Url.Action("RefuseOrder",new { id=orders[i].Order_ID})"><i class="bx bx-trash me-1"></i> Refuse</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
