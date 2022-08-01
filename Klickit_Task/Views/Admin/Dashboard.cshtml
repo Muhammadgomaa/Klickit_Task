@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    double TotalSales = ViewBag.Sales;
+    int TotalProducts = ViewBag.Prod;
+    int TotalOrders = ViewBag.Order;
+    int TotalCustomers = ViewBag.Cust;
+    int Pending = ViewBag.Pending;
+    int Accept = ViewBag.Accept;
 }
 
 <!-- Layout wrapper -->
@@ -220,7 +226,7 @@
                                                 </div>
                                             </div>
                                             <span class="fw-semibold d-block mb-1">Total Sales</span>
-                                            <h3 class="card-title mb-2">L.E</h3>
+                                            <h3 class="card-title mb-2">@TotalSales</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -229,13 +235,13 @@
                                         <div class="card-body">
                                             <div class="card-title d-flex align-items-start justify-content-between">
                                                 <div class="avatar flex-shrink-0">
-                                                    <img src="~/Dashboard_Files/assets/img/icons/unicons/refund.png"
+                                                    <img src="~/Dashboard_Files/assets/img/icons/unicons/product.png"
                                                          alt="Credit Card"
                                                          class="rounded" />
                                                 </div>
                                             </div>
-                                            <span>Total Refund</span>
-                                            <h3 class="card-title text-nowrap mb-1">L.E</h3>
+                                            <span>Total Product</span>
+                                            <h3 class="card-title text-nowrap mb-1">@TotalProducts</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -284,7 +290,7 @@
                                                 </div>
                                             </div>
                                             <span class="d-block mb-1">Total Orders</span>
-                                            <h3 class="card-title text-nowrap mb-2"></h3>
+                                            <h3 class="card-title text-nowrap mb-2">@TotalOrders</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +304,7 @@
                                                 </div>
                                             </div>
                                             <span class="fw-semibold d-block mb-1">Total Customers</span>
-                                            <h3 class="card-title mb-2"></h3>
+                                            <h3 class="card-title mb-2">@TotalCustomers</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -334,6 +340,7 @@
                                     <div class="card-title mb-0">
                                         <h5 class="m-0 me-2">Order Statistics</h5>
                                         <small class="text-muted">Total Sales</small>
+                                        <h3>@TotalSales L.E</h3>
                                     </div>
 
                                 </div>
@@ -342,6 +349,7 @@
                                         <div class="d-flex flex-column align-items-center gap-1">
                                             <h2 class="mb-2"></h2>
                                             <span>Total Orders</span>
+                                            <h1>@TotalOrders</h1>
                                         </div>
                                         <div id="orderStatisticsChart"></div>
                                     </div>
@@ -472,31 +480,31 @@
                                     <ul class="p-0 m-0">
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="~/Dashboard_Files/assets/img/icons/unicons/refund.png" alt="User" class="rounded" />
+                                                <img src="~/Dashboard_Files/assets/img/icons/unicons/pending.png" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
-                                                    <small class="text-muted d-block mb-1">Refund Orders</small>
-                                                    <h6 class="mb-0"></h6>
+                                                    <small class="text-muted d-block mb-1">Pending Orders</small>
+                                                    <h6 class="mb-0">@Pending</h6>
                                                 </div>
                                                 <div class="user-progress d-flex align-items-center gap-1">
                                                     <h6 class="mb-0"></h6>
-                                                    <span class="text-muted">L.E </span>
+                                                    <span class="text-muted"></span>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="d-flex mb-4 pb-1">
                                             <div class="avatar flex-shrink-0 me-3">
-                                                <img src="~/Dashboard_Files/assets/img/icons/unicons/orders.png" alt="User" class="rounded" />
+                                                <img src="~/Dashboard_Files/assets/img/icons/unicons/accept.png" alt="User" class="rounded" />
                                             </div>
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
-                                                    <small class="text-muted d-block mb-1">Shipping Orders</small>
-                                                    <h6 class="mb-0"></h6>
+                                                    <small class="text-muted d-block mb-1">Accepted Orders</small>
+                                                    <h6 class="mb-0">@Accept</h6>
                                                 </div>
                                                 <div class="user-progress d-flex align-items-center gap-1">
                                                     <h6 class="mb-0"></h6>
-                                                    <span class="text-muted">L.E </span>
+                                                    <span class="text-muted"></span>
                                                 </div>
                                             </div>
                                         </li>
@@ -507,19 +515,7 @@
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
                                                     <small class="text-muted d-block mb-1">Total Products</small>
-                                                    <h6 class="mb-0"></h6>
-                                                </div>
-
-                                            </div>
-                                        </li>
-                                        <li class="d-flex mb-4 pb-1">
-                                            <div class="avatar flex-shrink-0 me-3">
-                                                <img src="~/Dashboard_Files/assets/img/icons/unicons/category.png" alt="User" class="rounded" />
-                                            </div>
-                                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                <div class="me-2">
-                                                    <small class="text-muted d-block mb-1">Total Categories</small>
-                                                    <h6 class="mb-0"></h6>
+                                                    <h6 class="mb-0">@TotalProducts</h6>
                                                 </div>
 
                                             </div>
@@ -531,7 +527,7 @@
                                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                 <div class="me-2">
                                                     <small class="text-muted d-block mb-1">Total Customers</small>
-                                                    <h6 class="mb-0"></h6>
+                                                    <h6 class="mb-0">@TotalCustomers</h6>
                                                 </div>
                                             </div>
                                         </li>

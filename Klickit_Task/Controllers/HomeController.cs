@@ -145,7 +145,7 @@ namespace Klickit_Task.Controllers
             }
             return View();
         }
-
+        
         public ActionResult Logout()
         {
             Session["userid"] = null;

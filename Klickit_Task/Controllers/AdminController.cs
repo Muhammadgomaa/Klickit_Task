@@ -68,11 +68,99 @@ namespace Klickit_Task.Controllers
 
             HttpResponseMessage message = GlobalVariables.WebAPIcLinet.GetAsync("api/User").Result;
 
+            HttpResponseMessage message1 = GlobalVariables.WebAPIcLinet.GetAsync("api/Product").Result;
+
+            HttpResponseMessage message2 = GlobalVariables.WebAPIcLinet.GetAsync("api/Product").Result;
+
+            HttpResponseMessage message3 = GlobalVariables.WebAPIcLinet.GetAsync("api/Order").Result;
+
+            HttpResponseMessage message4 = GlobalVariables.WebAPIcLinet.GetAsync("api/User").Result;
+
+            HttpResponseMessage message5 = GlobalVariables.WebAPIcLinet.GetAsync("api/Order").Result;
+
+            HttpResponseMessage message6 = GlobalVariables.WebAPIcLinet.GetAsync("api/Order").Result;
+
+
             if (message.IsSuccessStatusCode)
             {
                 List<User> users = message.Content.ReadAsAsync<List<User>>().Result;
 
                 User user = users.Where(n => n.User_ID == id).SingleOrDefault();
+
+                List<Product> sales = message1.Content.ReadAsAsync<List<Product>>().Result;
+                List<double> Sales = sales.Select(n => n.Prod_Price).ToList();
+                double TotalSales = 0;
+
+                if (Sales.Count != 0)
+                {
+                    for(int i=0; i<Sales.Count; i++)
+                    {
+                        TotalSales += Sales[i];
+                    }
+                    ViewBag.Sales = TotalSales;
+                }
+                else
+                {
+                    ViewBag.Sales = 0;
+                }
+
+                List<Product> products = message2.Content.ReadAsAsync<List<Product>>().Result;
+
+                if (products.Count != 0)
+                {
+                    ViewBag.Prod = products.Count;
+                }
+                else
+                {
+                    ViewBag.Prod = 0;
+                }
+
+                List<Order> orders = message3.Content.ReadAsAsync<List<Order>>().Result;
+
+                if (orders.Count != 0)
+                {
+                    ViewBag.Order = orders.Count;
+                }
+                else
+                {
+                    ViewBag.Order = 0;
+                }
+
+                List<User> customers = message4.Content.ReadAsAsync<List<User>>().Result;
+                List<User> Customers = customers.Where(n => n.User_Role == "User").ToList();
+
+                if (Customers.Count != 0)
+                {
+                    ViewBag.Cust = Customers.Count;
+                }
+                else
+                {
+                    ViewBag.Cust = 0;
+                }
+
+                List<Order> pending = message5.Content.ReadAsAsync<List<Order>>().Result;
+                List<Order> Pending = pending.Where(n => n.Status == "Pending").ToList();
+
+                if (Pending.Count != 0)
+                {
+                    ViewBag.Pending = Pending.Count;
+                }
+                else
+                {
+                    ViewBag.Pending = 0;
+                }
+
+                List<Order> accept = message6.Content.ReadAsAsync<List<Order>>().Result;
+                List<Order> Accept = accept.Where(n => n.Status == "Accept").ToList();
+
+                if (Accept.Count != 0)
+                {
+                    ViewBag.Accept = Accept.Count;
+                }
+                else
+                {
+                    ViewBag.Accept = 0;
+                }
 
                 return View(user);
             }

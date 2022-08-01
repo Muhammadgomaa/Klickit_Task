@@ -274,6 +274,7 @@
     <Content Include="Dashboard_Files\assets\img\icons\brands\mailchimp.png" />
     <Content Include="Dashboard_Files\assets\img\icons\brands\slack.png" />
     <Content Include="Dashboard_Files\assets\img\icons\brands\twitter.png" />
+    <Content Include="Dashboard_Files\assets\img\icons\unicons\accept.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\category.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\cc-primary.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\cc-success.png" />
@@ -283,6 +284,7 @@
     <Content Include="Dashboard_Files\assets\img\icons\unicons\customers.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\orders.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\paypal.png" />
+    <Content Include="Dashboard_Files\assets\img\icons\unicons\pending.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\product.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\refund.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\sales.png" />
