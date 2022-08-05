@@ -21,9 +21,9 @@
                     </div>
                     <div class="card-body">
                         <form method="post" action="~/Admin/AcceptOrder" id="form1" enctype="multipart/form-data">
-                            @Html.HiddenFor(n => n.Prod_ID )
                             @Html.HiddenFor(n => n.User_ID)
                             @Html.HiddenFor(n => n.Order_ID)
+                            @Html.HiddenFor(n=> n.Total)
                             @Html.HiddenFor(n => n.Status, new { Value = "Accept" })
                             @Html.HiddenFor(n => n.Date)
                             @Html.HiddenFor(n => n.Time)

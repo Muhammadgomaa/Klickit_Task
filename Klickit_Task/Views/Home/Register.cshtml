@@ -32,6 +32,8 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Login_Files/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
     <!--===============================================================================================-->
 </head>
 <body>
@@ -53,7 +55,7 @@
                     <div class="wrap-input100">
                         @Html.TextBoxFor(n => n.User_Email, new { @class = "input100", @placeholder = "Useremail" })
                         <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                        @Html.ValidationMessageFor(n => n.User_Email, "", new { @style="color:white"})
+                        @Html.ValidationMessageFor(n => n.User_Email, "", new { @style = "color:white" })
                     </div>
 
                     <div class="wrap-input100 ">

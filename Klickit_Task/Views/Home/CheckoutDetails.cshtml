@@ -1,0 +1,123 @@
+﻿@model Klickit_Task.Models.User
+@using Klickit_Task.Models
+
+@{
+    ViewBag.Title = "CheckoutDetails";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    DateTime dateTime = DateTime.Now;
+    string date = dateTime.ToString("dd-MM-yyyy");
+    string time = dateTime.ToString("HH:mm");
+    long LastOrder = ViewBag.Last;
+}
+
+
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>CHECKOUT DETAILS</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Home/Home">Home</a></li>
+                    <li class="breadcrumb-item active">Checkout Details</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start Cart  -->
+<div class="cart-box-main">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ double Total = 0;}
+                            @foreach (Items items in (List<Items>)Session["cart"])
+                            {
+                                double total = items.Quantity * items.Product.Prod_Price;
+                                Total = Total + total;
+                                <tr>
+                                    <td>@items.Product.Prod_Name</td>
+                                    <td>@items.Product.Prod_Price "L.E"</td>
+                                    <td>@items.Quantity</td>
+                                    <td class="total-pr">
+                                        <p>@total "L.E"</p>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-lg-6 col-sm-6">
+                <div class="checkout-address">
+                    <div class="title-left">
+                        <h3>Order Information</h3>
+                    </div>
+                    <form class="needs-validation" id="form1" validate action="~/Home/ConfirmOrder">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+
+                                <input type="hidden" class="form-control" name="User_ID" value="@Model.User_ID">
+                                <input type="hidden" class="form-control" name="Status" value="Pending">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name">User Email</label>
+                            <input type="text" class="form-control" value="@Model.User_Email" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price">Date</label>
+                            <input type="text" class="form-control" name="Date" value="@date" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price">Time</label>
+                            <input type="text" class="form-control" name="Time" value="@time" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price">Grand Total</label>
+                            <input type="text" class="form-control" name="Total" value="@Total" readonly>
+                        </div>
+
+                        @foreach (Items items in (List<Items>)Session["cart"])
+                        {
+                            @*<input type="hidden" class="form-control" name="Order_ID" value="@LastOrder">
+                            <input type="hidden" class="form-control" name="Prod_ID" value="@items.Product.Prod_ID">
+                            <input type="hidden" class="form-control" name="Quantity" value="@items.Quantity">
+                            <input type="hidden" class="form-control" name="Price" value="@items.Product.Prod_Price">*@
+                            List<Invoice> invoices = new List<Invoice>();
+                            invoices.Add(
+                                new Invoice()
+                                {
+                                    Order_ID = LastOrder,
+                                    Prod_ID = items.Product.Prod_ID,
+                                    Quantity = items.Quantity.ToString(),
+                                    Price = items.Product.Prod_Price
+                                });
+                        }
+
+                        <hr class="mb-1">
+                        <div class="col-12 d-flex shopping-box">
+                            <input type="submit" class="ml-auto btn hvr-hover" value="Place Order" style="color:white" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Cart -->

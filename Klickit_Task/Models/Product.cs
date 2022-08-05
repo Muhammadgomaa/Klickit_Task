@@ -12,7 +12,7 @@ namespace Klickit_Task.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            Orders = new HashSet<Order>();
+            Invoices = new HashSet<Invoice>();
         }
 
         [Key]
@@ -28,6 +28,7 @@ namespace Klickit_Task.Models
         public double Prod_Price { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Invoice> Invoices { get; set; }
+
     }
 }

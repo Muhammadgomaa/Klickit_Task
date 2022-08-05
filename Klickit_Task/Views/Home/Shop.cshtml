@@ -4,7 +4,7 @@
     ViewBag.Title = "Shop";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
     List <Klickit_Task.Models.Product> products = ViewBag.Prod;
-    List<long> ProductsIDsOrders= ViewBag.ProductsOrder;
+    List<Items> items = ViewBag.List;
 }
 
 <div class="all-title-box">
@@ -40,7 +40,7 @@
                             {
                                 for (int i = 0; i < products.Count; i++)
                                 {
-                                    if (ProductsIDsOrders.Contains(products[i].Prod_ID))
+                                    if (items.Select(n=>n.Product.Prod_ID).Contains(products[i].Prod_ID))
                                     {
                                         <tr>
                                             <td>@products[i].Prod_Name</td>
@@ -56,7 +56,7 @@
                                             <td>@products[i].Prod_Name</td>
                                             <td>@products[i].Prod_Price "L.E"</td>
                                             <td>
-                                                <a href="@Url.Action("RequestOrder", "Home", new { id = products[i].Prod_ID })" class="ml-auto btn hvr-hover" style="color:white">Request Order</a>
+                                                <a href="@Url.Action("AddCart", "Home", new { id = products[i].Prod_ID })" class="ml-auto btn hvr-hover" style="color:white">Request Order</a>
                                             </td>
                                         </tr>
                                     }

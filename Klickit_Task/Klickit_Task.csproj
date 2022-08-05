@@ -137,6 +137,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="GlobalVariables.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Items.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
@@ -287,6 +289,7 @@
     <Content Include="Dashboard_Files\assets\img\icons\unicons\pending.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\product.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\refund.png" />
+    <Content Include="Dashboard_Files\assets\img\icons\unicons\rejected.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\sales.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\wallet-info.png" />
     <Content Include="Dashboard_Files\assets\img\icons\unicons\wallet.png" />
@@ -603,6 +606,10 @@
     <Content Include="Views\Admin\Accept.cshtml" />
     <Content Include="Views\Home\RequestOrder.cshtml" />
     <Content Include="Views\Admin\AcceptOrder.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Home\CheckoutDetails.cshtml" />
+    <Content Include="Views\Admin\Reject.cshtml" />
+    <Content Include="Views\Admin\RefuseOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,12 +17,10 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Order ID</th>
                             <th>User Email</th>
-                            <th>Product Name</th>
-                            <th>Product Price</th>
                             <th>Date</th>
                             <th>Time</th>
+                            <th>Total</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -30,12 +28,10 @@
                         @for (int i = 0; i < orders.Count; i++)
                         {
                         <tr>
-                            <td>@orders[i].Order_ID</td>
                             <td><strong>@orders[i].User.User_Email</strong></td>
-                            <td><strong>@orders[i].Product.Prod_Name</strong></td>
-                            <td>@orders[i].Product.Prod_Price "L.E"</td>
                             <td>@orders[i].Date</td>
                             <td>@orders[i].Time</td>
+                            <td><strong>@orders[i].Total "L.E"</strong></td>
                             <td><span class="badge bg-label-success me-1">Accept</span></td>
                         </tr>
                         }
